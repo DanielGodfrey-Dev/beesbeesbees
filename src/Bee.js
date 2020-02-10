@@ -14,12 +14,19 @@ var Bee = function() {
 
 	this.age = 5;
 	this.color = 'yellow';
-	this.food = super.food;
-	this.eat = super.eat();
+	
+	// this.food = super.food;
+	// this.eat = super.eat();
+	//!!
+	//above is unnecessary --- these values are inhereted from superclass
+	//!!
+
 	this.job = 'keep on growing';
+
+	Bee.prototype.constructor = Bee;
 
 };
 
 Bee.prototype = Object.create(Grub.prototype);
-Bee.prototype.constructor = Bee;
+
 

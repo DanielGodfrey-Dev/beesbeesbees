@@ -18,10 +18,26 @@ var HoneyMakerBee = function() {
 
 	this.age = 10;
 	this.job = 'make honey';
-	this.color = super.color;
-	this.food =
+	this.honeyPot = 0;
+
+	HoneyMakerBee.prototype.constructor = HoneyMakerBee;
 
 };
 
 HoneyMakerBee.prototype = Object.create(Bee.prototype);
-HoneyMakerBee.prototype.constructor = HoneyMakerBee;
+
+//NOTE: this object extenesion needs to happen BEFORE defining prototpye functions as below.
+
+HoneyMakerBee.prototype.makeHoney = function() {
+
+	return this.honeyPot += 1;
+
+}
+
+HoneyMakerBee.prototype.giveHoney = function() {
+
+	return this.honeyPot -= 1;
+
+}
+
+
